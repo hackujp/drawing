@@ -61,6 +61,11 @@ canvas.addEventListener("touchend", () => {
   isDrag = false;
 });
 
+const clearButton = document.querySelector("#clear-button")
+  clearButton.addEventListener("click", () => {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+});
+
 function draw(x, y) {
   context.lineWidth = 5;
   context.lineTo(x, y);
