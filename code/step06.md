@@ -61,8 +61,8 @@ canvas.addEventListener("touchend", () => {
   isDrag = false;
 });
 
-const clearButton = document.querySelector("#clear-button")
-  clearButton.addEventListener("click", () => {
+const clearButton = document.querySelector("#clear-button");
+clearButton.addEventListener("click", () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
 });
 
