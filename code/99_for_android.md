@@ -41,7 +41,12 @@ canvas.addEventListener("mousemove", event => {
   draw(event.layerX, event.layerY);
 });
 canvas.addEventListener("touchmove", event => {
-  draw(event.layerX, event.layerY);
+  // draw(event.layerX, event.layerY);
+  var touch = event.touches[0];
+  var x = touch.pageX - canvas.offsetLeft;
+  var y = touch.pageY - canvas.offsetTop;
+  event.preventDefault();
+  draw(x, y);
 });
 
 canvas.addEventListener("mousedown", () => {
@@ -77,6 +82,3 @@ function draw(x, y) {
   context.stroke();
 }
 ```
-
-バージョンによっては Android で動かない場合があります。
-そんな場合は [こちら](./99_for_android.md) のコードを参照して下さい。
