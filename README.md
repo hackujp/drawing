@@ -13,4 +13,4 @@
 * [Step 4. 線を消せるようにしよう 終了時のコード](./code/step04.md)
 * [Step 5. 書き始めと終わりの処理を追加 終了時のコード](./code/step05.md)
 * [Step 6. 仕上げ 終了時のコード](./code/step06.md)
-* [Step 6. 仕上げ（Android版） 終了時のコード](.code/99_for_android.md)
+* [Step 6. 仕上げ（Android版） 終了時のコード](./code/99_for_android.md)
