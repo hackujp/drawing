@@ -7,10 +7,7 @@
 ## Code
 
 ### Basic Step
-* [Step 1. ボタンを配置してみよう 終了時のコード](./code/step01.md)
-* [Step 2. キャンバスを配置してみよう 終了時のコード](./code/step02.md)
-* [Step 3. 線を描けるようにしよう 終了時のコード](./code/step03.md)
-* [Step 4. 線を消せるようにしよう 終了時のコード](./code/step04.md)
-* [Step 5. 書き始めと終わりの処理を追加 終了時のコード](./code/step05.md)
-* [Step 6. 仕上げ 終了時のコード](./code/step06.md)
-* [Step 6. 仕上げ（Android版） 終了時のコード](./code/99_for_android.md)
+* [演習1. ボタン、キャンバスを配置してみよう 終了時のコード](./code/step01.md)
+* [演習2. 線を書いて消せるようにしよう 終了時のコード](./code/step02.md)
+* [演習3. 仕上げ 終了時のコード](./code/step03.md)
+* [演習3. 仕上げ 終了時のコード（Android版）](./code/step03_for_android.md)

@@ -1,4 +1,4 @@
-# Step 3. 線を描けるようにしよう
+# 演習3. 仕上げ
 
 index.html
 
@@ -31,6 +31,7 @@ index.html
 ```
 
 src/index.js
+
 ```js
 import "./styles.css";
 
@@ -44,11 +45,47 @@ canvas.addEventListener("touchmove", event => {
   draw(event.layerX, event.layerY);
 });
 
+canvas.addEventListener('mousedown', () => {
+  context.beginPath();
+  isDrag = true;
+});
+canvas.addEventListener('mouseup', () => {
+  context.closePath();
+  isDrag = false;
+});
+canvas.addEventListener("touchstart", () => {
+  context.beginPath();
+  isDrag = true;
+});
+canvas.addEventListener("touchend", () => {
+  context.closePath();
+  isDrag = false;
+});
+
+const clearButton = document.querySelector("#clear-button")
+clearButton.addEventListener("click", () => {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+let isDrag = false;
 function draw(x, y) {
+  if (!isDrag) {
+   return;
+  }
+
   context.lineWidth = 5;
   context.lineTo(x, y);
   context.stroke();
 }
 ```
 
-Next: [step04.md](./step04.md)
+src/style.css
+
+```css
+body {
+   overflow: hidden;
+}
+```
+
+バージョンによっては Android で動かない場合があります。
+そんな場合は [演習3. 仕上げ(Android)](./step03_for_android.md) のコードを参照して下さい。

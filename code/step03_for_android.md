@@ -1,4 +1,4 @@
-# Step 4. 線を消せるようにしよう
+# 演習3. 仕上げ(Android)
 
 index.html
 
@@ -41,19 +41,52 @@ canvas.addEventListener("mousemove", event => {
   draw(event.layerX, event.layerY);
 });
 canvas.addEventListener("touchmove", event => {
-  draw(event.layerX, event.layerY);
+  // draw(event.layerX, event.layerY); // ここを削除
+  var touch = event.touches[0]; // ここから追記
+  var x = touch.pageX - canvas.offsetLeft;
+  var y = touch.pageY - canvas.offsetTop;
+  event.preventDefault();
+  draw(x, y); // ここまで追記
 });
 
-const clearButton = document.querySelector("#clear-button")
-  clearButton.addEventListener("click", () => {
+canvas.addEventListener("mousedown", () => {
+  context.beginPath();
+  isDrag = true;
+});
+canvas.addEventListener("mouseup", () => {
+  context.closePath();
+  isDrag = false;
+});
+canvas.addEventListener("touchstart", () => {
+  context.beginPath();
+  isDrag = true;
+});
+canvas.addEventListener("touchend", () => {
+  context.closePath();
+  isDrag = false;
+});
+
+const clearButton = document.querySelector("#clear-button");
+clearButton.addEventListener("click", () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
 });
 
+let isDrag = false;
 function draw(x, y) {
+  if (!isDrag) {
+    return;
+  }
+
   context.lineWidth = 5;
   context.lineTo(x, y);
   context.stroke();
 }
 ```
 
-Next: [step05.md](./step05.md)
+src/style.css
+
+```css
+body {
+   overflow: hidden;
+}
+```
