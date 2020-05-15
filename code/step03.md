@@ -45,11 +45,11 @@ canvas.addEventListener("touchmove", event => {
   draw(event.layerX, event.layerY);
 });
 
-canvas.addEventListener('mousedown', () => {
+canvas.addEventListener("mousedown", () => {
   context.beginPath();
   isDrag = true;
 });
-canvas.addEventListener('mouseup', () => {
+canvas.addEventListener("mouseup", () => {
   context.closePath();
   isDrag = false;
 });
@@ -62,7 +62,7 @@ canvas.addEventListener("touchend", () => {
   isDrag = false;
 });
 
-const clearButton = document.querySelector("#clear-button")
+const clearButton = document.querySelector("#clear-button");
 clearButton.addEventListener("click", () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
 });
