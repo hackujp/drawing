@@ -45,11 +45,11 @@ canvas.addEventListener("touchmove", event => {
   draw(event.layerX, event.layerY);
 });
 
-canvas.addEventListener('mousedown', () => {
+canvas.addEventListener("mousedown", () => {
   context.beginPath();
   isDrag = true;
 });
-canvas.addEventListener('mouseup', () => {
+canvas.addEventListener("mouseup", () => {
   context.closePath();
   isDrag = false;
 });
