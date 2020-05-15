@@ -45,7 +45,7 @@ canvas.addEventListener("touchmove", event => {
   draw(event.layerX, event.layerY);
 });
 
-const clearButton = document.querySelector("#clear-button")
+const clearButton = document.querySelector("#clear-button");
 clearButton.addEventListener("click", () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
 });
